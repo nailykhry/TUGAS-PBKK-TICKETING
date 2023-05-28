@@ -7,4 +7,10 @@ class FlightModel extends Model
     protected $primaryKey = 'id';
     
     protected $allowedFields = ['name', 'rute_from', 'rute_to', 'depart_at', 'arrive_at', 'date', 'seat_qty', 'type', 'status', 'price'];
+
+    public function seats()
+    {
+        return $this->hasMany('App\Models\SeatModel', 'flight_id');
+    }
+
 }
