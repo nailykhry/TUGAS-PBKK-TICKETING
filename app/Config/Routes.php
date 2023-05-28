@@ -4,7 +4,12 @@ namespace Config;
 
 use App\Controllers\Home;
 use CodeIgniter\Config\Services;
+use App\Controllers\BlogController;
+use App\Controllers\UserController;
+use App\Controllers\LoginController;
 use App\Controllers\FlightController;
+use App\Controllers\RegisterController;
+use App\Controllers\DashboardController;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
@@ -49,7 +54,11 @@ $routes->get('/editflight/(:num)', 'DashboardController::edit/$1');
 
 $routes->get('/blogs', 'BlogController::index');
 
-
+$routes->group("api", function ($routes) {
+    $routes->post('register', 'RegisterController::index');
+    $routes->post('login', 'LoginController::index');
+    $routes->get('users', 'UserController::index', ['filter' => 'authFilter']);
+});
 
 
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
