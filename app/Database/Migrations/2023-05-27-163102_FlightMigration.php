@@ -15,6 +15,10 @@ class FlightMigration extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
+            'logo' => [
+                'type' => 'VARCHAR',
+                'constraint' => 500,
+            ],
             'name' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
