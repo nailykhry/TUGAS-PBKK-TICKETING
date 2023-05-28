@@ -47,6 +47,9 @@ $routes->get('/dashboard', 'DashboardController::index');
 $routes->get('/createflight', 'DashboardController::create');
 $routes->get('/editflight/(:num)', 'DashboardController::edit/$1');
 
+$routes->get('/blogs', 'BlogController::index');
+
+
 
 
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
