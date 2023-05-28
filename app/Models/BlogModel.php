@@ -6,5 +6,5 @@ class BlogModel extends Model
     protected $table = 'blogs';
     protected $primaryKey = 'id';
     
-    protected $allowedFields = ['title', 'desc_sort', 'body'];
+    protected $allowedFields = ['title', 'photo', 'desc_sort', 'body' ];
 }

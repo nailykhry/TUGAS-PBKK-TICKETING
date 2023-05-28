@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class BlogMigration extends Migration
+class ExtraFacilitiesMigration extends Migration
 {
     public function up()
     {
@@ -15,21 +15,20 @@ class BlogMigration extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'title' => [
+            'name' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
             ],
-            'photo' => [
-                'type' => 'VARCHAR',
-                'constraint' => 500,
-            ],
-            'desc_sort' => [
+            'desc_short' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
             ],
-            'body' => [
+            'description' => [
                 'type' => 'VARCHAR',
                 'constraint' => 10000,
+            ],
+            'price' => [
+                'type' => 'INT',
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -42,11 +41,11 @@ class BlogMigration extends Migration
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->createTable('blogs');
+        $this->forge->createTable('extrafacilities');   
     }
 
     public function down()
     {
-        $this->forge->dropTable('blogs');
+        $this->forge->dropTable('extrafacilities');
     }
 }
