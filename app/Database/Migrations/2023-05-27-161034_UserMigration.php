@@ -10,8 +10,8 @@ class UserMigration extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'INT',
-                'constraint' => 5,
+                'type' => 'BIGINT',
+                'constraint' => 255,
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
@@ -38,6 +38,10 @@ class UserMigration extends Migration
             'password' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
+            ],
+            'role' => [
+                'type' => 'INT',
+                'default' => 0,
             ],
             'created_at' => [
                 'type' => 'DATETIME',
