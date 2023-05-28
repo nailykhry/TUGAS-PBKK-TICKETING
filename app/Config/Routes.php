@@ -2,6 +2,10 @@
 
 namespace Config;
 
+use App\Controllers\Home;
+use CodeIgniter\Config\Services;
+use App\Controllers\FlightController;
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -31,19 +35,20 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-/*
- * --------------------------------------------------------------------
- * Additional Routing
- * --------------------------------------------------------------------
- *
- * There will often be times that you need additional routing and you
- * need it to be able to override any defaults in this file. Environment
- * based routes is one such time. require() additional route files here
- * to make that happen.
- *
- * You will have access to the $routes object within that file without
- * needing to reload it.
- */
+//flight
+$routes->get('/flights', 'FlightController::index');
+$routes->get('/flights/(:num)', 'FlightController::show/$1');
+$routes->put('/flights/(:num)', 'FlightController::update/$1');
+$routes->post('/flights', 'FlightController::store');
+$routes->delete('/flights/(:num)', 'FlightController::delete/$1');
+
+//dashboard
+$routes->get('/dashboard', 'DashboardController::index');
+$routes->get('/createflight', 'DashboardController::create');
+$routes->get('/editflight/(:num)', 'DashboardController::edit/$1');
+
+
+
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
