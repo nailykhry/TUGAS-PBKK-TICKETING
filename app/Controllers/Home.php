@@ -6,6 +6,10 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        return view('index.php');
+    }
+    public function cek()
+    {
+        return view('users/list_flight');
     }
 }
