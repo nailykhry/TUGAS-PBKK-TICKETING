@@ -33,7 +33,7 @@ class FlightController extends Controller
         $flights = $query->findAll();
         $data['flights'] = $flights;
         
-        var_dump($data['flights']);
+        return view('users/list_flight', $data);
     }
     
     // show flight detail
