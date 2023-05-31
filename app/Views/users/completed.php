@@ -16,7 +16,9 @@
           <div class="container-fluid">
               <!-- Navbar brand -->
               <a class="navbar-brand" href="#">
-                <img src="public/images/logo.png" alt="Logo Brand" width="40" height="40">
+
+                <img src="<?= base_url("images/logo.png"); ?>" alt="Logo Brand" width="40" height="40">
+
                 <span class="navbar-text ml-2">Flitix</span>
               </a>
 
@@ -47,7 +49,9 @@
         <!-- Navbar -->
         
         <!-- Image -->
-        <img src="public/images/vacation.png" class="rounded mx-auto d-block" alt="Responsive image" width="250" height="250">
+
+        <img src="<?= base_url('images/vacation.png'); ?>" class="rounded mx-auto d-block" alt="Responsive image" width="250" height="250">
+
         <div class="text-center" style="color:#239BD8">
             <h3>Payment Completed</h3>
             <hr class="hr w-25 mx-auto" />
@@ -63,7 +67,9 @@
             <!-- Row -->
             <div class="row mt-3 mb-3">
                 <div class="col text-center">
-                    <img src="public/images/qantas.png" width="100" height="100">
+
+                    <img src="<?= base_url("images/qantas.png"); ?>" width="100" height="100">
+                  
                     <p class="card-text"><?= $flight['name']; ?></p>
                     <p class="card-text">
                         <!-- From -->

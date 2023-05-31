@@ -15,7 +15,7 @@
           <div class="container-fluid">
               <!-- Navbar brand -->
               <a class="navbar-brand" href="#">
-                <img src="public/images/logo.png" alt="Logo Brand" width="40" height="40">
+                <img src="images/logo.png" alt="Logo Brand" width="40" height="40">
                 <span class="navbar-text ml-2">Flitix</span>
               </a>
 
@@ -46,7 +46,7 @@
         <!-- Navbar -->
         
         <!-- Image -->
-        <img src="public/images/Miniature airplane travel theme.png" class="img-fluid" alt="Responsive image">
+        <img src="images/Miniature airplane travel theme.png" class="img-fluid" alt="Responsive image">
 
         <!-- Input -->
         <form action="/flights" method="get">
