@@ -15,7 +15,7 @@
           <div class="container-fluid">
               <!-- Navbar brand -->
               <a class="navbar-brand" href="#">
-                <img src="Images/logo.png" alt="Logo Brand" width="40" height="40">
+                <img src="public/images/logo.png" alt="Logo Brand" width="40" height="40">
                 <span class="navbar-text ml-2">Flitix</span>
               </a>
 
@@ -46,59 +46,68 @@
         <!-- Navbar -->
         
         <!-- Image -->
-        <img src="Images/Miniature airplane travel theme.png" class="img-fluid" alt="Responsive image">
+        <img src="public/images/Miniature airplane travel theme.png" class="img-fluid" alt="Responsive image">
 
         <!-- Input -->
         <form action="/flights" method="get">
-            <div class="card m-5 w-50 mx-auto">
+            <div class="card m-5 w-75 mx-auto shadow" style="border: none;">
               <h5 class="m-3 text-center" style="color: #239BD8;">Search your Flight</h5>
-              <div class="card-body">            
-                <div class="col mb-3">
-                  <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"></path>
-                      </svg>
-                    </span>
-                    <input type="text" class="form-control" placeholder="From" aria-label="Input group example" aria-describedby="basic-addon1" fdprocessedid="s53ov" name="rute_from">
+              <div class="card-body">
+                <div class="row">
+                  <!-- From -->        
+                  <div class="col mb-3">
+                    <div class="input-group">
+                      <span class="input-group-text" id="basic-addon1" style="background-color: #E2F5FC; border: #E2F5FC;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#239BD8" class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"></path>
+                        </svg>
+                      </span>
+                      <input type="text" class="form-control" placeholder="From" aria-label="Input group example" aria-describedby="basic-addon1" fdprocessedid="s53ov" name="rute_from">
+                    </div>
+                  </div>
+
+                  <!-- To --> 
+                  <div class="col mb-3">
+                    <div class="input-group">
+                      <span class="input-group-text" id="basic-addon1" style="background-color: #E2F5FC; border: #E2F5FC;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#239BD8" class="bi bi-arrow-down-right-circle" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 5.146a.5.5 0 1 0-.708.708L9.243 9.95H6.475a.5.5 0 1 0 0 1h3.975a.5.5 0 0 0 .5-.5V6.475a.5.5 0 1 0-1 0v2.768L5.854 5.146z"/>
+                        </svg>
+                      </span>
+                      <input type="text" class="form-control" placeholder="To" aria-label="Input group example" aria-describedby="basic-addon1" fdprocessedid="s53ov" name="rute_to">
+                    </div>
+                  </div>
+
+                  <!-- Date --> 
+                  <div class="col mb-3">
+                    <div class="input-group">
+                      <span class="input-group-text" id="basic-addon1" style="background-color: #E2F5FC; border: #E2F5FC;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#239BD8" class="bi bi-calendar-event" viewBox="0 0 16 16">
+                          <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                        </svg>
+                      </span>
+                      <input type="date" class="form-control" placeholder="Date" aria-label="Input group example" aria-describedby="basic-addon1" fdprocessedid="s53ov" name="date">
+                    </div>
+                  </div>
+
+                  <!-- People -->
+                  <div class="col mb-3">
+                    <div class="input-group">
+                      <span class="input-group-text" id="basic-addon1" style="background-color: #E2F5FC; border: #E2F5FC;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#239BD8" class="bi bi-person" viewBox="0 0 16 16">
+                          <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                        </svg>
+                      </span>
+                      <input type="text" class="form-control" placeholder="People" aria-label="Input group example" aria-describedby="basic-addon1" fdprocessedid="s53ov" name="people">
+                    </div>
+                  </div>
+
+                  <!-- Button Search -->
+                  <div class="col mb-3">
+                    <button type="submit" class="btn d-grid gap-2 col-12 mx-auto" style="background-color: #239BD8; color: white">Search</button>
                   </div>
                 </div>
-
-                <div class="col mb-3">
-                  <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-right-circle" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 5.146a.5.5 0 1 0-.708.708L9.243 9.95H6.475a.5.5 0 1 0 0 1h3.975a.5.5 0 0 0 .5-.5V6.475a.5.5 0 1 0-1 0v2.768L5.854 5.146z"/>
-                      </svg>
-                    </span>
-                    <input type="text" class="form-control" placeholder="To" aria-label="Input group example" aria-describedby="basic-addon1" fdprocessedid="s53ov" name="rute_to">
-                  </div>
-                </div>
-
-                <div class="col mb-3">
-                  <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
-                        <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
-                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                      </svg>
-                    </span>
-                    <input type="date" class="form-control" placeholder="Date" aria-label="Input group example" aria-describedby="basic-addon1" fdprocessedid="s53ov" name="date">
-                  </div>
-                </div>
-
-                <div class="col mb-3">
-                  <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
-                      </svg>
-                    </span>
-                    <input type="text" class="form-control" placeholder="People" aria-label="Input group example" aria-describedby="basic-addon1" fdprocessedid="s53ov" name="people">
-                  </div>
-                </div>
-
-                <button type="submit" class="btn" style="background-color: #239BD8; color: white">Search</button>
 
               </div>
             </div>
@@ -106,10 +115,10 @@
         
         
         <!-- Footer -->
-        <footer class="bg-dark text-center" style="color: white;">
+        <footer class="bg-light text-center" style="color: #239BD8;">
           <!-- Copyright -->
-          <div class="text-center p-3" style="background-color: #239BD8">
-            © 2023 Copyright: PT. Flitix
+          <div class="text-center p-3" style="background-color: #E2F5FC;">
+            © 2023 PT. Flitix • All Rights Reserved.
           </div>
           <!-- Copyright -->
         </footer>
