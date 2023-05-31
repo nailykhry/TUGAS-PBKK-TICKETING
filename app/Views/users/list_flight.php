@@ -6,9 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Flight</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <link rel="stylesheet" href="css/listflight.css">
       </head>
     <body>
+    
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #239BD8;">
           <!-- Container wrapper -->
@@ -106,8 +108,8 @@
 
 
         <!-- CONTAINER -->
-        <div class="container-xl">
-          <table class="table tab-style">
+        <div class="container-xl tab-style">
+          <table class="table ">
             <tbody>
               <?php foreach ($flights as $flight){ 
                 // olah selisih jam
@@ -121,16 +123,30 @@
                 $selisihWaktu = $selisihJam . 'h ' . $selisihMenit . 'm';
                 
                 ?>
-                <tr>
+                <tr> 
                   <td><?= $selisihWaktu; ?><br><span style="color:#cccccc"><?= $flight['name']; ?></span></td>
                   <td><?= substr($flight['depart_at'], 0, 5); ?> WIB - <?= substr($flight['arrive_at'], 0, 5); ?> WIB</td>
                   <td><?= $flight['type']; ?></td>
                   <td>IDR <?= $flight['price']; ?>/pax<br><span style="color:#cccccc"><?= $flight['status']; ?></span></td>
-                </tr>
+                  <?php 
+                    $people = intval(!empty($_GET['people']) ? $_GET['people'] : 1);
+                  ?>
+                  <td><button onclick="window.location.href='bookingdetail\/<?= $flight['id']; ?>\/<?= $people; ?>'" type="submit" class="btn" style="background-color: #239BD8; color: white">Booking</td>
+                </tr> 
               <?php } ?>
             </tbody>
           </table>  
         </div>
+
+        <!-- <div class="container pop-card" id="detailFlight" style="display: none;">
+            <h4>Choosen Flight</h4>
+            <img src=<span id="logo"></span></img>
+            <p><span id="rute_from"></span> <i class="bi bi-arrow-right-short"></i> <span id="rute_to"></span></p>
+            <p><span id="date"></span> <i class="bi bi-dot"></i> <span id="depart"></span></p>
+            <button type="submit" class="btn" style="background-color: #239BD8; color: white">Continue Booking <i class="bi bi-arrow-right-short"></i></button>
+        </div> -->
+        
+       
         
         
         <!-- Footer -->

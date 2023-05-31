@@ -1,5 +1,13 @@
 .tab-style{
-    border: 3px solid #F6F6FE;
+    border: 1px solid #BDBDBD;
+    border-radius: 20px;
+    margin: 20px 30px;
+}
+
+.pop-card{
+    border: 1px solid #BDBDBD;
     border-radius: 10px;
     margin: 20px 30px;
+    width: 500px;
+    padding: 10px;
 }

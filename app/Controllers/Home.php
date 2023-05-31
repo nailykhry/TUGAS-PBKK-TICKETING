@@ -10,6 +10,6 @@ class Home extends BaseController
     }
     public function cek()
     {
-        return view('users/list_flight');
+        return view('users/booking_detail');
     }
 }
