@@ -47,148 +47,80 @@
         
         <div class="row">
             <div class="col">
-                <!-- Contact Details -->
-                <h5 class="ms-5 mt-5 mb-3">Contact Details</h5>
-                <div class="card ms-5 mb-5">
-                    <div class="card-header">
-                    Contact Details
-                    </div>
-                    
-                    <div class="card-body mb-3">
-                        <form>
-                            <div class="row">
-                                <div class="col form-group mb-3">
-                                    <label for="Payment Method">Title</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                      <option>Mr.</option>
-                                      <option>Mrs.</option>
-                                      <option>Ms.</option>
-                                    </select>
-                                </div>
-                                <div class="col form-group mb-3">
-                                  <label for="Name">Full Name</label>
-                                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Full Name">
-                                </div>
-                            </div>
+                <form action="/payment/<?php echo $flight[0]['id']; ?>/<?php echo $people; ?>" method="post" id="transactionform">
+                    <!-- Contact Details -->
+                    <h5 class="ms-5 mt-5 mb-3">Contact Details</h5>
+                    <div class="card ms-5 mb-5">
+                        <div class="card-header">
+                        Contact Details
+                        </div>
+                        
+                        <div class="card-body mb-3">
                             
-                            <div class="form-group mb-3">
-                                <label for="exampleInputPassword1">Mobile Number</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="+62xxxxxxxxxx">
-                            </div>
-                        </form>                    
-                    </div>
-                </div>
-
-                <!-- Traveller Details -->
-                <h5 class="ms-5 mb-3">Traveller Details</h5>
-
-                <!-- Adult 1 -->
-                <div class="card ms-5 mb-3">
-                    <div class="card-header">
-                        Adult 1
-                    </div>
-                    
-                    <div class="card-body mb-3">
-                        <form>
-                            <div class="row">
-                                <div class="col form-group mb-3">
-                                    <label for="Payment Method">Title</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                      <option>Mr.</option>
-                                      <option>Mrs.</option>
-                                      <option>Ms.</option>
-                                    </select>
+                                <div class="row">
+                                    <div class="col form-group mb-3">
+                                        <label for="Payment Method">Title</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Mr.</option>
+                                        <option>Mrs.</option>
+                                        <option>Ms.</option>
+                                        </select>
+                                    </div>
+                                    <div class="col form-group mb-3">
+                                    <label for="Name">Full Name</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Full Name">
+                                    </div>
                                 </div>
-                                <div class="col form-group mb-3">
-                                  <label for="Name">Full Name</label>
-                                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Full Name">
+                                
+                                <div class="form-group mb-3">
+                                    <label for="exampleInputPassword1">Mobile Number</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="+62xxxxxxxxxx">
                                 </div>
-                            </div>
+                                                
+                        </div>
+                    </div>
+
+                    <!-- Traveller Details -->
+                    <h5 class="ms-5 mb-3">Traveller Details</h5>
+
+                    <!-- Adult 1 -->
+                    <?php for($i=0; $i<$people; $i++){ ?>
+                    <div class="card ms-5 mb-3">
+                        <div class="card-header">
+                            Adult <?= $i+1; ?>
+                        </div>
+                        
+                        <div class="card-body mb-3">
                             
-                            <div class="form-group mb-3">
-                                <label for="exampleInputPassword1">Nationality</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country">
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="exampleInputPassword1">ID Card Number</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="xxxxxxxxxx">
-                            </div>
-                        </form>                    
-                    </div>
-                </div>
-
-                <!-- Adult 2 -->
-                <div class="card ms-5 mb-3">
-                    <div class="card-header">
-                        Adult 2
-                    </div>
-                    
-                    <div class="card-body mb-3">
-                        <form>
-                            <div class="row">
-                                <div class="col form-group mb-3">
-                                    <label for="Payment Method">Title</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                      <option>Mr.</option>
-                                      <option>Mrs.</option>
-                                      <option>Ms.</option>
-                                    </select>
+                                <div class="row">
+                                    <div class="col form-group mb-3">
+                                        <label for="Payment Method">Title</label>
+                                        <select class="form-control" id="title<?= $i+1; ?>" name="title<?= $i+1; ?>">
+                                        <option>Mr.</option>
+                                        <option>Mrs.</option>
+                                        <option>Ms.</option>
+                                        </select>
+                                    </div>
+                                    <div class="col form-group mb-3">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" class="form-control" id="name<?= $i+1; ?>" name="name<?= $i+1; ?>" placeholder="Full Name">
+                                    </div>
                                 </div>
-                                <div class="col form-group mb-3">
-                                  <label for="Name">Full Name</label>
-                                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Full Name">
+                                
+                                <div class="form-group mb-3">
+                                    <label for="nationality">Nationality</label>
+                                    <input type="text" class="form-control" id="nationality<?= $i+1; ?>" name="nationality<?= $i+1; ?>" placeholder="Country">
                                 </div>
-                            </div>
-                            
-                            <div class="form-group mb-3">
-                                <label for="exampleInputPassword1">Nationality</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country">
-                            </div>
 
-                            <div class="form-group mb-3">
-                                <label for="exampleInputPassword1">ID Card Number</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="xxxxxxxxxx">
-                            </div>
-                        </form>                    
-                    </div>
-                </div>
-
-                <!-- Adult 3 -->
-                <div class="card ms-5 mb-3">
-                    <div class="card-header">
-                        Adult 3
-                    </div>
-                    
-                    <div class="card-body mb-3">
-                        <form>
-                            <div class="row">
-                                <div class="col form-group mb-3">
-                                    <label for="Payment Method">Title</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                      <option>Mr.</option>
-                                      <option>Mrs.</option>
-                                      <option>Ms.</option>
-                                    </select>
+                                <div class="form-group mb-3">
+                                    <label for="card<?= $i+1; ?>">ID Card Number</label>
+                                    <input type="text" class="form-control" id="card<?= $i+1; ?>" name="card<?= $i+1; ?>" placeholder="xxxxxxxxxx">
                                 </div>
-                                <div class="col form-group mb-3">
-                                  <label for="Name">Full Name</label>
-                                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Full Name">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group mb-3">
-                                <label for="exampleInputPassword1">Nationality</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country">
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="exampleInputPassword1">ID Card Number</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="xxxxxxxxxx">
-                            </div>
-                        </form>                    
+                                                
+                        </div>
                     </div>
-                </div>
+                    <?php } ?>
+                </form>   
             </div>
 
             <div class="col">
@@ -283,12 +215,12 @@
                     </div>
                 </div>
 
-                <a href="#" class="mx-5 mt-3 btn btn-primary" style="background-color: #239BD8; color: white; border: none;">
+                <button type="submit" form="transactionform" class="mx-5 mt-3 btn btn-primary" style="background-color: #239BD8; color: white; border: none;">
                     Make Payment 
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                     </svg>
-                </a>
+                </button>
                 
             </div>
         </div>
