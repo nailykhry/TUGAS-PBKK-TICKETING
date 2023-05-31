@@ -64,6 +64,8 @@ $routes->group("api", function ($routes) {
 //transaction
 $routes->get('/bookingdetail/(:num)/(:num)', 'TransactionController::bookingdetail/$1/$2');
 $routes->get('/travellerdetail/(:num)/(:num)', 'TransactionController::travellerdetail/$1/$2');
+$routes->post('/payment/(:num)/(:num)', 'TransactionController::payment/$1/$2');
+
 
 
 

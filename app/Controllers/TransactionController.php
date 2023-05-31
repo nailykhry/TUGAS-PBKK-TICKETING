@@ -28,4 +28,16 @@ class TransactionController extends BaseController
         $data['people'] = $people;
         return view('users/traveller_details', $data);
     }
+
+    
+    public function payment($id, $people)
+    {
+        $flightModel = new FlightModel();
+        $flight = $flightModel->find($id);
+
+        $data['flight'] = $flight;
+        $data['people'] = $people;
+
+        return view('index', $data);
+    }
 }
