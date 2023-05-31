@@ -61,6 +61,11 @@ $routes->group("api", function ($routes) {
     $routes->get('users', 'UserController::index', ['filter' => 'authFilter']);
 });
 
+//transaction
+$routes->get('/bookingdetail/(:num)/(:num)', 'TransactionController::bookingdetail/$1/$2');
+$routes->get('/travellerdetail/(:num)/(:num)', 'TransactionController::travellerdetail/$1/$2');
+
+
 
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';

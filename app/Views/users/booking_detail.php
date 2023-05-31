@@ -57,27 +57,29 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#239BD8" class="bi bi-airplane-fill" viewBox="0 0 16 16">
                                 <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Z"/>
                             </svg>
-                            Qantas Airlines</h5>
+                            <?php //var_dump($flight) ?>
+                            <?= $flight[0]['name']; ?></h5>
                     <p class="card-text">
                         <div class="row">
                             <p class="col card-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#239BD8" class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"></path>
                                 </svg>
-                                Jakarta (CGK) 
+                               <?= $flight[0]['rute_from']; ?>
                             </p>
                             <p class="col card-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#239BD8" class="bi bi-arrow-down-right-circle" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 5.146a.5.5 0 1 0-.708.708L9.243 9.95H6.475a.5.5 0 1 0 0 1h3.975a.5.5 0 0 0 .5-.5V6.475a.5.5 0 1 0-1 0v2.768L5.854 5.146z"/>
                                 </svg>
-                                Denpasar - Bali (DPS)
+                                <?= $flight[0]['rute_to']; ?>
                             </p>
                             <p class="col card-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#239BD8" class="bi bi-airplane" viewBox="0 0 16 16">
                                     <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
                                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                                 </svg>
-                                Wed, 25 May 2022
+                                <?php $date = date('l, d F Y', strtotime($flight[0]['date'])); ?>
+                                <?= $date; ?>
                             </p>
                         </div>
 
@@ -87,14 +89,14 @@
                                     <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
                                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
                                 </svg>
-                                12:10 PM
+                                <?= $flight[0]['depart_at']; ?>
                             </p>
                             <p class="col card-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#239BD8" class="bi bi-clock" viewBox="0 0 16 16">
                                     <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
                                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
                                 </svg>
-                                2:00 PM
+                                <?= $flight[0]['arrive_at']; ?>
                             </p>
                             <p class="col card-text">
                                 
@@ -112,7 +114,7 @@
                     <div class="card-body m-2">
                         <h5 class="card-title">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#DEB887" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
                                         <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
@@ -132,7 +134,7 @@
                     <div class="card-body m-2">
                         <h5 class="card-title">
                             <div class="form-check">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"></h5>
+                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" onclick="toggleBoxRent()"></h5>
                                 <label class="form-check-label" for="flexCheckDefault">
                                     <h5>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#F9C802" class="bi bi-car-front-fill" viewBox="0 0 16 16">
@@ -183,13 +185,13 @@
                         <table class="table table-borderless">
                             <tr>
                                 <th scope="row"></th>
-                                <td>Qantas Airlines (adult) x3</td>
-                                <td style="color: #239BD8;">IDR 3.750.000</td>
+                                <td><?= $flight[0]['name']; ?> x<?= $people; ?></td>
+                                <td style="color: #239BD8;">IDR <?= $people*$flight[0]['price']; ?>,-</td>
                             </tr>
-                            <tr>
+                            <tr style="display: none;" id="boxRent">
                                 <th scope="row"></th>
                                 <td>Car Rental (SUV - 4 days)</td>
-                                <td style="color: #239BD8;">IDR 640.000</td>
+                                <td style="color: #239BD8;">IDR 640000</td>
                             </tr>
                             <tr>
                                 <th scope="row"></th>
@@ -197,13 +199,27 @@
                                 <td style="color: #239BD8;">FREE</td>
                             </tr>
                         </table>
-                    <a href="#" class="mx-auto btn btn-primary" style="background-color: #239BD8; color: white; border: none;">Continue Booking <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <a href="/travellerdetail/<?= $flight[0]['id']; ?>/<?= $people; ?>" class="mx-auto btn btn-primary" style="background-color: #239BD8; color: white; border: none;">Continue Booking <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                     </svg></a>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+        function toggleBoxRent() {
+            var checkBox = document.getElementById("flexCheckChecked");
+            var boxRent = document.getElementById("boxRent");
+        
+            if (checkBox.checked) {
+                boxRent.style.display = "table-row";
+            } else {
+                boxRent.style.display = "none";
+            }
+        }
+        </script>
+
 
         <!-- Footer -->
         <footer class="bg-dark text-center" style="color: white;">
