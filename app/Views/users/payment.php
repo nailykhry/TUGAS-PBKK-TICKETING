@@ -49,8 +49,8 @@
             <div class="col">
                 <form action="/transaction/<?php echo $flight['id']; ?>/<?php echo $people; ?>" method="post">
                     <!-- Payment Method -->
-                    <div class="card m-5">
-                        <div class="card-header">
+                    <div class="card m-5 shadow" style="border: none">
+                        <div class="card-header" style="background-color: #239BD8; color: white;">
                             Payment Method
                         </div>
 
@@ -83,8 +83,8 @@
                     </div>
 
                     <!-- Price Details-->
-                    <div class="card m-5">
-                        <div class="card-header">
+                    <div class="card m-5 shadow" style="border: none">
+                        <div class="card-header" style="background-color: #239BD8; color: white;">
                         Price Details
                         </div>
                         <div class="card-body">
@@ -139,8 +139,8 @@
 
             <div class="col">
                 <!-- Your Flight -->
-                <div class="card col m-5">
-                    <div class="card-header">
+                <div class="card col m-5 shadow" style="border: none">
+                    <div class="card-header" style="background-color: #239BD8; color: white;">
                         Your Flight
                     </div>
                     <div class="card-body">
@@ -208,12 +208,12 @@
         </div>
         
         <!-- Footer -->
-        <footer class="bg-dark text-center" style="color: white;">
-          <!-- Copyright -->
-          <div class="text-center p-3" style="background-color: #239BD8">
-            © 2023 Copyright: PT. Flitix
-          </div>
-          <!-- Copyright -->
+        <footer class="bg-light text-center" style="color: #239BD8;">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: #E2F5FC;">
+              © 2023 PT. Flitix • All Rights Reserved.
+            </div>
+            <!-- Copyright -->
         </footer>
 
     </body>

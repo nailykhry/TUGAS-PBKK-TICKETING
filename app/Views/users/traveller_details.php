@@ -15,7 +15,9 @@
           <div class="container-fluid">
               <!-- Navbar brand -->
               <a class="navbar-brand" href="#">
+
                 <img src="<?= base_url("images/logo.png"); ?>" alt="Logo Brand" width="40" height="40">
+
                 <span class="navbar-text ml-2">Flitix</span>
               </a>
 
@@ -50,8 +52,8 @@
                 <form action="/payment/<?php echo $flight[0]['id']; ?>/<?php echo $people; ?>" method="post" id="transactionform">
                     <!-- Contact Details -->
                     <h5 class="ms-5 mt-5 mb-3">Contact Details</h5>
-                    <div class="card ms-5 mb-5">
-                        <div class="card-header">
+                    <div class="card ms-5 mb-5 shadow" style="border: none">
+                        <div class="card-header" style="background-color: #239BD8; color: white;">
                         Contact Details
                         </div>
                         
@@ -83,11 +85,11 @@
                     <!-- Traveller Details -->
                     <h5 class="ms-5 mb-3">Traveller Details</h5>
 
-                    <!-- Adult 1 -->
+                    <!-- People -->
                     <?php for($i=0; $i<$people; $i++){ ?>
-                    <div class="card ms-5 mb-3">
-                        <div class="card-header">
-                            Adult <?= $i+1; ?>
+                    <div class="card ms-5 mb-3 shadow" style="border: none">
+                        <div class="card-header" style="background-color: #239BD8; color: white;">
+                            People <?= $i+1; ?>
                         </div>
                         
                         <div class="card-body mb-3">
@@ -127,8 +129,8 @@
                 <h5 class="ms-5 mt-5 mb-3">Your Flight</h5>
 
                 <!-- Your Flight -->
-                <div class="card ms-5 mb-5 mx-5">
-                    <div class="card-header">
+                <div class="card ms-5 mb-5 mx-5 shadow" style="border: none">
+                    <div class="card-header" style="background-color: #239BD8; color: white;">
                         Your Flight
                     </div>
                     <div class="card-body">
@@ -184,8 +186,8 @@
                 
                 <!-- Price Details-->
                 <h5 class="ms-5 mb-3">Price Details</h5>
-                <div class="card mx-5 mb-3">
-                    <div class="card-header">
+                <div class="card mx-5 mb-3 shadow" style="border: none">
+                    <div class="card-header" style="background-color: #239BD8; color: white;">
                     Price Details
                     </div>
                     <div class="card-body">
@@ -215,25 +217,22 @@
                     </div>
                 </div>
 
-                <button type="submit" form="transactionform" class="mx-5 mb-3 mt-3 btn btn-primary" style="background-color: #239BD8; color: white; border: none;">
-                    Make Payment 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                    </svg>
+                <button type="submit" form="transactionform" class="mx-5 mt-3 mb-5 btn btn-primary" style="background-color: #239BD8; color: white; border: none;">
+                    Make Payment
+
+
                 </button>
                 
             </div>
-        </div>
-        
-            
+        </div> 
 
         <!-- Footer -->
-        <footer class="bg-dark text-center" style="color: white;">
-          <!-- Copyright -->
-          <div class="text-center p-3" style="background-color: #239BD8">
-            © 2023 Copyright: PT. Flitix
-          </div>
-          <!-- Copyright -->
+        <footer class="bg-light text-center" style="color: #239BD8;">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: #E2F5FC;">
+              © 2023 PT. Flitix • All Rights Reserved.
+            </div>
+            <!-- Copyright -->
         </footer>
 
     </body>

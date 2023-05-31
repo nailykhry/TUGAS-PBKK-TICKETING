@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
+        <title>Booking Detail</title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     </head>
@@ -15,7 +15,9 @@
           <div class="container-fluid">
               <!-- Navbar brand -->
               <a class="navbar-brand" href="#">
+
                 <img src="<?= base_url("images/logo.png"); ?>" alt="Logo Brand" width="40" height="40">
+
                 <span class="navbar-text ml-2">Flitix</span>
               </a>
 
@@ -48,9 +50,9 @@
         <div class="row">
             <div class="col">
                 <!-- Your Flight -->
-                <div class="card m-5">
-                    <div class="card-header">
-                    Your flight
+                <div class="card m-5 shadow" style="border: none">
+                    <div class="card-header" style="background-color: #239BD8; color: white;">
+                    Your Flight
                     </div>
                     <div class="card-body mb-3">
                         <h5 class="card-title">
@@ -110,7 +112,7 @@
                 </div>
 
                 <!-- Extra Baggage -->
-                <div class="card col m-5">
+                <div class="card col m-5 shadow" style="border: none">
                     <div class="card-body m-2">
                         <h5 class="card-title">
                             <div class="form-check">
@@ -130,7 +132,7 @@
                 </div>
 
                 <!-- Rent a Car -->
-                <div class="card col m-5">
+                <div class="card col m-5 shadow" style="border: none">
                     <div class="card-body m-2">
                         <h5 class="card-title">
                             <div class="form-check">
@@ -158,8 +160,8 @@
 
             <div class="col">
                 <!-- Additional Information -->
-                <div class="card m-5">
-                    <div class="card-header">
+                <div class="card m-5 shadow" style="border: none">
+                    <div class="card-header" style="background-color: #239BD8; color: white;">
                         Additional Information
                     </div>
                     <div class="card-body">
@@ -177,8 +179,8 @@
                 </div>
                 
                 <!-- Price Details-->
-                <div class="card m-5">
-                    <div class="card-header">
+                <div class="card m-5 shadow" style="border: none">
+                    <div class="card-header" style="background-color: #239BD8; color: white;">
                     Price Details
                     </div>
                     <div class="card-body">
@@ -220,14 +222,13 @@
         }
         </script>
 
-
         <!-- Footer -->
-        <footer class="bg-dark text-center" style="color: white;">
-          <!-- Copyright -->
-          <div class="text-center p-3" style="background-color: #239BD8">
-            © 2023 Copyright: PT. Flitix
-          </div>
-          <!-- Copyright -->
+        <footer class="bg-light text-center" style="color: #239BD8;">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: #E2F5FC;">
+              © 2023 PT. Flitix • All Rights Reserved.
+            </div>
+            <!-- Copyright -->
         </footer>
 
     </body>
