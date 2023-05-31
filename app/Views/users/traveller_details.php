@@ -68,13 +68,13 @@
                                     </div>
                                     <div class="col form-group mb-3">
                                     <label for="Name">Full Name</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Full Name">
+                                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Full Name">
                                     </div>
                                 </div>
                                 
                                 <div class="form-group mb-3">
-                                    <label for="exampleInputPassword1">Mobile Number</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="+62xxxxxxxxxx">
+                                    <label for="phone">Mobile Number</label>
+                                    <input type="text" class="form-control" id="phone" placeholder="+62xxxxxxxxxx">
                                 </div>
                                                 
                         </div>
