@@ -16,7 +16,7 @@
           <div class="container-fluid">
               <!-- Navbar brand -->
               <a class="navbar-brand" href="#">
-                <img src="Images/logo.png" alt="Logo Brand" width="40" height="40">
+                <img src="public/images/logo.png" alt="Logo Brand" width="40" height="40">
                 <span class="navbar-text ml-2">Flitix</span>
               </a>
 
@@ -47,7 +47,7 @@
         <!-- Navbar -->
         
         <!-- Image -->
-        <img src="Images/vacation.png" class="rounded mx-auto d-block" alt="Responsive image" width="250" height="250">
+        <img src="public/images/vacation.png" class="rounded mx-auto d-block" alt="Responsive image" width="250" height="250">
         <div class="text-center" style="color:#239BD8">
             <h3>Payment Completed</h3>
             <hr class="hr w-25 mx-auto" />
@@ -63,7 +63,7 @@
             <!-- Row -->
             <div class="row mt-3 mb-3">
                 <div class="col text-center">
-                    <img src="Images/qantas.png" width="100" height="100">
+                    <img src="public/images/qantas.png" width="100" height="100">
                     <p class="card-text"><?= $flight['name']; ?></p>
                     <p class="card-text">
                         <!-- From -->
@@ -133,12 +133,12 @@
         </div>
         
         <!-- Footer -->
-        <footer class="bg-dark text-center" style="color: white;">
-          <!-- Copyright -->
-          <div class="text-center p-3" style="background-color: #239BD8">
-            © 2023 Copyright: PT. Flitix
-          </div>
-          <!-- Copyright -->
+        <footer class="bg-light text-center" style="color: #239BD8;">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: #E2F5FC;">
+              © 2023 PT. Flitix • All Rights Reserved.
+            </div>
+            <!-- Copyright -->
         </footer>
 
     </body>

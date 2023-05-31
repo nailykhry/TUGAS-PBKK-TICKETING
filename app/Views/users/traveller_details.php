@@ -83,11 +83,11 @@
                     <!-- Traveller Details -->
                     <h5 class="ms-5 mb-3">Traveller Details</h5>
 
-                    <!-- Adult 1 -->
+                    <!-- People -->
                     <?php for($i=0; $i<$people; $i++){ ?>
                     <div class="card ms-5 mb-3 shadow" style="border: none">
                         <div class="card-header" style="background-color: #239BD8; color: white;">
-                            Adult <?= $i+1; ?>
+                            People <?= $i+1; ?>
                         </div>
                         
                         <div class="card-body mb-3">
@@ -229,7 +229,7 @@
               © 2023 PT. Flitix • All Rights Reserved.
             </div>
             <!-- Copyright -->
-          </footer>
+        </footer>
 
     </body>
 </html>
