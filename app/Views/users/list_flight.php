@@ -118,6 +118,14 @@
 
         <!-- CONTAINER -->
         <div class="container-xl tab-style m-5 mx-auto w-75 shadow">
+
+        <?php if(count($flights) <= 0 ){ ?>
+          <div class="text-center m-5">
+              <h3 style="color:#239BD8;">Sorry, the flight you are looking for is currently unavailable. </h3>
+              <h5>Please try again later or explore alternative options for your travel plans.</h5>
+          </div>
+         <?php } ?>
+
           <table class="table ">
             <tbody>
               <?php foreach ($flights as $flight){ 
@@ -133,8 +141,23 @@
                 
                 ?>
                 <tr> 
-                  <td><?= $selisihWaktu; ?><br><span style="color:#cccccc"><?= $flight['name']; ?></span></td>
-                  <td><?= substr($flight['depart_at'], 0, 5); ?> WIB - <?= substr($flight['arrive_at'], 0, 5); ?> WIB</td>
+                  <td>
+                    <img src="<?php echo base_url('images/qantas-1.png');?>" alt=""> 
+                  </td>
+
+                  <td>
+                    <?= $selisihWaktu; ?><br><span style="color:#cccccc"><?= $flight['name']; ?></span>
+                    </td>
+
+                  <td><?php $date = date('l, d F Y', strtotime($flight['date'])); ?>
+                      <?= $date; ?><br>
+                      <span style="color:#cccccc"><?= substr($flight['depart_at'], 0, 5); ?> WIB - <?= substr($flight['arrive_at'], 0, 5); ?> WIB</span>
+                    </td>
+                  
+                  <td>
+                    <?= $flight['rute_from']; ?> - <?= $flight['rute_to']; ?>
+                  </td>
+                  
                   <td><?= $flight['type']; ?></td>
                   <td>IDR <?= $flight['price']; ?>/pax<br><span style="color:#cccccc"><?= $flight['status']; ?></span></td>
                   <?php 
