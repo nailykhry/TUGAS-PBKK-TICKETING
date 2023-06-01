@@ -198,7 +198,7 @@
                             <tr>
                                 <th scope="row"></th>
                                 <td><?= $flight[0]['name']; ?> x<?= $people; ?></td>
-                                <td style="color: #239BD8;">IDR <?= $people*$flight[0]['price']; ?>,-</td>
+                                <td style="color: #239BD8;">IDR <?= $people*$flight[0]['price']; ?></td>
                             </tr>
                             <tr>
                                 <th scope="row"></th>

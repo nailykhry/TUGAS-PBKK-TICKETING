@@ -224,7 +224,7 @@
                             <tr>
                                 <th scope="row"></th>
                                 <td><?= $flight['name']; ?> x<?= $people; ?></td>
-                                <td style="color: #239BD8;">IDR <?= $people*$flight['price']; ?>,-</td>
+                                <td style="color: #239BD8;">IDR <?= $people*$flight['price']; ?></td>
                             </tr>
                             <tr style="display: none;" id="boxRent">
                                 <th scope="row"></th>
@@ -281,6 +281,10 @@
 
             function handleCheckboxChange(event) {
                 var checkbox = event.target;
+
+                if (checkbox.id === 'flexCheckChecked' || checkbox.id === 'flexCheckCheckedBaggage') {
+                    return; // Melanjutkan ke iterasi berikutnya jika ID cocok
+                }
 
                 if (checkbox.checked) {
                     checkedCount++;
