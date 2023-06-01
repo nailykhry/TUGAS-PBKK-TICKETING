@@ -75,7 +75,7 @@
                                     </div>
                                     <div class="col form-group mb-3">
                                         <label for="password">CVV</label>
-                                        <input type="text" class="form-control" id="password" name="password" placeholder="Password">
+                                        <input type="text" class="form-control" id="password" name="password" placeholder="cvv">
                                     </div>
                                 </div>
                                            
