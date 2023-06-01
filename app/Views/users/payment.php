@@ -14,7 +14,7 @@
           <!-- Container wrapper -->
           <div class="container-fluid">
               <!-- Navbar brand -->
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="/">
                 <img src="<?= base_url("images/logo.png"); ?>" alt="Logo Brand" width="40" height="40"> 
                 <span class="navbar-text ml-2">Flitix</span>
               </a>
@@ -130,7 +130,8 @@
                         <input type="hidden" name="<?= $key; ?>" value="<?= $value; ?>">
                     <?php  } ?>
 
-
+                    <input type="hidden" name="seats" value="<?= $seats; ?>">
+                    <input type="hidden" name="bookId" value="<?= $bookId; ?>">
                     <button type="submit" class="ms-5 mb-5 btn btn-primary" style="background-color: #239BD8; color: white; border: none;">
                         Pay Now
                     </button>

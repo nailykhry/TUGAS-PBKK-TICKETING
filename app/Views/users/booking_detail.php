@@ -14,7 +14,7 @@
           <!-- Container wrapper -->
           <div class="container-fluid">
               <!-- Navbar brand -->
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="/">
                 <img src="<?= base_url("images/logo.png"); ?>" alt="Logo Brand" width="40" height="40">
                 <span class="navbar-text ml-2">Flitix</span>
               </a>
@@ -58,27 +58,27 @@
                                 <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Z"/>
                             </svg>
                             <?php //var_dump($flight) ?>
-                            <?= $flight[0]['name']; ?></h5>
+                            <?= $flight['name']; ?></h5>
                     <p class="card-text">
                         <div class="row">
                             <p class="col card-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#239BD8" class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"></path>
                                 </svg>
-                               <?= $flight[0]['rute_from']; ?>
+                               <?= $flight['rute_from']; ?>
                             </p>
                             <p class="col card-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#239BD8" class="bi bi-arrow-down-right-circle" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 5.146a.5.5 0 1 0-.708.708L9.243 9.95H6.475a.5.5 0 1 0 0 1h3.975a.5.5 0 0 0 .5-.5V6.475a.5.5 0 1 0-1 0v2.768L5.854 5.146z"/>
                                 </svg>
-                                <?= $flight[0]['rute_to']; ?>
+                                <?= $flight['rute_to']; ?>
                             </p>
                             <p class="col card-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#239BD8" class="bi bi-airplane" viewBox="0 0 16 16">
                                     <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
                                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                                 </svg>
-                                <?php $date = date('l, d F Y', strtotime($flight[0]['date'])); ?>
+                                <?php $date = date('l, d F Y', strtotime($flight['date'])); ?>
                                 <?= $date; ?>
                             </p>
                         </div>
@@ -89,14 +89,14 @@
                                     <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
                                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
                                 </svg>
-                                <?= $flight[0]['depart_at']; ?>
+                                <?= $flight['depart_at']; ?>
                             </p>
                             <p class="col card-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#239BD8" class="bi bi-clock" viewBox="0 0 16 16">
                                     <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
                                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
                                 </svg>
-                                <?= $flight[0]['arrive_at']; ?>
+                                <?= $flight['arrive_at']; ?>
                             </p>
                             <p class="col card-text">
                                 
@@ -113,217 +113,36 @@
                     </div>
                     <div class="card-body mb-3">
                         <!-- Seat -->
-                        <p class="card-text" style="color: #239BD8;">Seat 2A, 2B, 2C</p>
-                        <div class="row mb-3">
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>1A</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>1B</label>
-                            </div>
-                            <div class="col-1">
-                                <h5 style="color: #239BD8;">1</h5>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>1C</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>1D</label>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>2A</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>2B</label>
-                            </div>
-                            <div class="col-1">
-                                <h5 style="color: #239BD8;">2</h5>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>2C</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>2D</label>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>3A</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>3B</label>
-                            </div>
-                            <div class="col-1">
-                                <h5 style="color: #239BD8;">3</h5>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>3C</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>3D</label>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>4A</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>4B</label>
-                            </div>
-                            <div class="col-1">
-                                <h5 style="color: #239BD8;">4</h5>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>4C</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>4D</label>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>5A</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>5B</label>
-                            </div>
-                            <div class="col-1">
-                                <h5 style="color: #239BD8;">5</h5>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>5C</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>5D</label>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>6A</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>6B</label>
-                            </div>
-                            <div class="col-1">
-                                <h5 style="color: #239BD8;">6</h5>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>6C</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>6D</label>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>7A</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>7B</label>
-                            </div>
-                            <div class="col-1">
-                                <h5 style="color: #239BD8;">7</h5>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>7C</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>7D</label>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>8A</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>8B</label>
-                            </div>
-                            <div class="col-1">
-                                <h5 style="color: #239BD8;">8</h5>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>8C</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>8</label>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>9A</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>9B</label>
-                            </div>
-                            <div class="col-1">
-                                <h5 style="color: #239BD8;">9</h5>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>9C</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>9D</label>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>10A</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>10B</label>
-                            </div>
-                            <div class="col-1">
-                                <h5 style="color: #239BD8;">10</h5>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>10C</label>
-                            </div>
-                            <div class="col-1">
-                                <h5><input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedBaggage"></h5>
-                                <label>10D</label>
-                            </div>
-                        </div>
+                        
+                        <!-- <p class="card-text" style="color: #239BD8;">Seat 2A, 3B</p> -->
+                        <p class="card-text" style="color: #239BD8;">FRONT SIDE</p>
+                        <form id="seat" action="/travellerdetail/<?= $flight['id']; ?>/<?= $people; ?>" method="post" >
+                            <?php $flag=0; for($i=0; $i<$flight['seat_qty']; $i=$i+4) {
+                                 $flag=$flag+1;?>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-1">
+                                        <h5><input class="form-check-input" type="checkbox" value="<?= $seats[$i]['status']; ?>" id="seatcheck<?= $i+1; ?>" name="<?= $i+1; ?>"></h5>
+                                        <label><?= $flag; ?>A</label>
+                                    </div>
+                                    <div class="col-1">
+                                        <h5><input class="form-check-input" type="checkbox" value="<?= $seats[$i+1]['status']; ?>" id="seatcheck<?= $i+2; ?>" name="<?= $i+2; ?>"></h5>
+                                        <label><?= $flag; ?>B</label>
+                                    </div>
+                                    <div class="col-1">
+                                        <h5 style="color: #239BD8;"><?= $flag; ?></h5>
+                                    </div>
+                                    <div class="col-1">
+                                        <h5><input class="form-check-input" type="checkbox" value="<?= $seats[$i+2]['status']; ?>" id="seatcheck<?= $i+3; ?>" name="<?= $i+3; ?>"></h5>
+                                        <label><?= $flag; ?>C</label>
+                                    </div>
+                                    <div class="col-1">
+                                        <h5><input class="form-check-input" type="checkbox" value="<?= $seats[$i+3]['status']; ?>" id="seatcheck<?= $i+4; ?>" name="<?= $i+4; ?>"></h5>
+                                        <label><?= $flag; ?>D</label>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -404,8 +223,8 @@
                         <table class="table table-borderless">
                             <tr>
                                 <th scope="row"></th>
-                                <td><?= $flight[0]['name']; ?> x<?= $people; ?></td>
-                                <td style="color: #239BD8;">IDR <?= $people*$flight[0]['price']; ?>,-</td>
+                                <td><?= $flight['name']; ?> x<?= $people; ?></td>
+                                <td style="color: #239BD8;">IDR <?= $people*$flight['price']; ?>,-</td>
                             </tr>
                             <tr style="display: none;" id="boxRent">
                                 <th scope="row"></th>
@@ -418,9 +237,9 @@
                                 <td style="color: #239BD8;">FREE</td>
                             </tr>
                         </table>
-                    <a href="/travellerdetail/<?= $flight[0]['id']; ?>/<?= $people; ?>" class="mx-auto btn btn-primary" style="background-color: #239BD8; color: white; border: none;">Continue Booking <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <button form="seat" class="mx-auto btn btn-primary" style="background-color: #239BD8; color: white; border: none;">Continue Booking <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                    </svg></a>
+                    </svg></button>
                     </div>
                 </div>
             </div>
@@ -438,6 +257,48 @@
             }
         }
         </script>
+
+        <?php 
+        for ($i = 1; $i <= $flight['seat_qty']; $i++) {
+            echo "
+                <script>
+                    var myCheckbox = document.getElementById('seatcheck{$i}');
+                    var status = parseInt(myCheckbox.value); 
+                    myCheckbox.checked = (status !== '0');
+                    if(myCheckbox.checked){
+                        myCheckbox.disabled = myCheckbox.checked;
+                    }
+                </script>
+            ";
+        }
+        ?>
+
+
+        <script>
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            var maxChecked = <?= $people; ?>;
+            var checkedCount = 0;
+
+            function handleCheckboxChange(event) {
+                var checkbox = event.target;
+
+                if (checkbox.checked) {
+                    checkedCount++;
+                } else {
+                    checkedCount--;
+                }
+
+                if (checkedCount > maxChecked) {
+                    checkbox.checked = false;
+                    checkedCount--;
+                }
+            }
+
+            checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener('change', handleCheckboxChange);
+            });
+        </script>
+
 
         <!-- Footer -->
         <footer class="bg-light text-center" style="color: #239BD8;">

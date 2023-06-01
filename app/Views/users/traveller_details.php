@@ -14,7 +14,7 @@
           <!-- Container wrapper -->
           <div class="container-fluid">
               <!-- Navbar brand -->
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="/">
 
                 <img src="<?= base_url("images/logo.png"); ?>" alt="Logo Brand" width="40" height="40">
 
@@ -118,6 +118,9 @@
                                     <label for="card<?= $i+1; ?>">ID Card Number</label>
                                     <input type="text" class="form-control" id="card<?= $i+1; ?>" name="card<?= $i+1; ?>" placeholder="xxxxxxxxxx">
                                 </div>
+
+                                <!-- hidden input -->
+                                <input type="hidden" name="seats" value="<?= implode(',', $seats); ?>">
                                                 
                         </div>
                     </div>
@@ -216,6 +219,8 @@
                         </table>
                     </div>
                 </div>
+
+                
 
                 <button type="submit" form="transactionform" class="mx-5 mt-3 mb-5 btn btn-primary" style="background-color: #239BD8; color: white; border: none;">
                     Make Payment
