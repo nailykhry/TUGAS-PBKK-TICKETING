@@ -12,5 +12,4 @@ class FlightModel extends Model
     {
         return $this->hasMany('App\Models\SeatModel', 'flight_id');
     }
-
 }

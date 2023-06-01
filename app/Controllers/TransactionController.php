@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\SeatModel;
 use App\Models\FlightModel;
 use App\Models\TransactionModel;
 use App\Controllers\BaseController;
@@ -11,11 +12,14 @@ class TransactionController extends BaseController
     public function bookingdetail($id, $people)
     {
         $flightModel = new FlightModel();
-        $query = $flightModel->select('*');
-        $query->where('id', $id);
-        $flight = $query->findAll();
+        $flight = $flightModel->find($id);
+
+        $seatModel = new SeatModel();
+        $seats = $seatModel->where('flight_id', $flight['id'])->findAll();
+        
         $data['flight'] = $flight;
         $data['people'] = $people;
+        $data['seats'] = $seats;
         return view('users/booking_detail', $data);
     }
 
@@ -25,8 +29,18 @@ class TransactionController extends BaseController
         $query = $flightModel->select('*');
         $query->where('id', $id);
         $flight = $query->findAll();
+
+        //hasil seats
+        $seatkeys = array(); 
+
+        foreach ($_POST as $key => $value) {
+            $seatkeys[] = $key; 
+        }
+        
         $data['flight'] = $flight;
         $data['people'] = $people;
+        $data['seats'] = $seatkeys;
+        
         return view('users/traveller_details', $data);
     }
 
@@ -42,7 +56,8 @@ class TransactionController extends BaseController
         $query = $db->table($transactionModel->table)->select('MAX(id) as max_id');
         $result = $query->get()->getRow();
         $maxId = $result->max_id;
-        
+
+        $data['seats'] = $_POST['seats'];
         $data['bookId'] = $maxId+1;
         $data['flight'] = $flight;
         $data['people'] = $people;
@@ -63,9 +78,6 @@ class TransactionController extends BaseController
         $result = $query->get()->getRow();
         $maxId = $result->max_id;
 
-        // foreach ($_POST as $key => $value) {
-        //     print_r( $key . ' : ' . $value . '<br>');
-        // }
 
         $status = "lunas";
         $false = 0;
@@ -82,8 +94,28 @@ class TransactionController extends BaseController
         ];
         $model->save($data);
 
+        $data['seats'] = $_POST['seats'];
+
+        // SAVE SEATS 
+        $this->saveSeats($id, $data['seats']);
+
+
+        $data['bookId'] = $_POST['bookId'];
         $data['flight'] = $flight;
         $data['people'] = $people;
         return view('users/completed', $data);
+    }
+
+    public function saveSeats($id, $data){
+        $seatModel = new SeatModel();
+        
+        $explodedArray = explode(",", $data);
+        $number = array_map('intval', $explodedArray);
+
+        foreach($number as $numb){
+            $seat = $seatModel->where('flight_id', $id)->where('number', $numb)->first();
+            $seat['status'] = 1;
+            $seatModel->update($seat['id'], $seat);
+        }
     }
 }
